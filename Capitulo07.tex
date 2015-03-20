@@ -1,0 +1,58 @@
+
+\chapter{Conclusiones}\label{capit:cap7}
+\vspace{-2.0325ex}%
+\noindent
+\rule{\textwidth}{0.5pt}
+\vspace{-5.5ex}% 
+\newcommand{\pushline}{\Indp}% Indent puede ir o no :p
+
+En esta sección se pretenden mostrar las conclusiones generadas durante el desarrollo de esta tesis, determinando los objetivos con los que ha cumplido. 
+
+Es importante también señalar durante esta sección algunas propuestas que pudiesen colaborar en la realización de trabajos futuros sobre la misma línea de investigación.
+
+\section{Sobre los objetivos de la tesis}
+Se ha propuesto un codificador-decodificador para señales de audio cardiaco $x(t)$, el cual está basado en la suma de una parte \emph{determinística} y una parte \emph{estocástica} dado por:
+
+\[
+ x(t) = \underbrace{\sum_{m}^M \alpha_{k}g_{\gamma_{m}}(t)}_{\text{parte determinística}} + \underbrace{R_{M}(t)}_{\text{parte estocástica}},
+\]
+
+que tiene como objetivo el obtener una forma de onda y señal de audio óptimas, con la mayor cantidad posible de información y con un carácter de compresión de señal. Es importante señalar que no se ha encontrado durante el desarrollo de esta tesis un codificador para audio cardiaco con estas características.
+
+Durante el desarrollo de este trabajo han surgido como conclusiones las descritas en los siguientes puntos:
+
+\begin{itemize}
+	\item Los resultados de la presente investigación se consideran satisfactorios, un argumento se basa en el hecho de que no  se ha encontrado en la literatura un codificador para audio cardiaco que conjunte estos modelados. 
+	\item La descomposición atómica por \emph{Matching Pursuit} proporciona un esquema de compresión poderoso en la representación del PCG, sin embargo la información puede ser mayormente aprovechada por medio de aplicar este método solamente a los eventos cardiacos segmentados, ya que a diferencia de los silencios son los que presentan mayor correlación con los átomos del  diccionario de Gabor.
+	\item Los eventos correspondientes a patologías cardiacas requieren un número mayor a 10 átomos para su representación en MP. Es importante establecer un mecanismo para la extracción de energía en estas partes de la señal, que preserve la información contenida y logre el menor número de iteraciones posible. 
+	\item La señal residual $R_{M}(t)$ es muy importante de modelar, a pesar de representar en este caso sólo el 1\% de la energía de 			cada evento cardiaco aún es bastante preceptible debido al carácter logarítmico del sistema auditivo humano. 
+		\item El modelado de la señal residual y los silencios cardiacos es posible mediante la predicción lineal (LPC), donde no debe omitirse la 			inclusión de la estimación del periodo tonal (pitch). La función de autocorrelación provee la información necesaria para el desarrollo 		de este cálculo.
+	\item Los filtros de pre-énfasis proporcionan el soporte necesario a las altas frecuencias, permitiendo representarlas con mayor precisión 		en el esquema de reconstrucción del residual.
+	\item Es importante seleccionar la representación equivalente a los coeficientes de predicción adecuada, dado que la cuantificación de los 		mismos no es un procedimiento sencillo. Mediante la distorsión espectral se tiene una medida adecuada para la evaluación de los 			coeficientes equivalentes al filtro predictor.
+		\item La verificación de la naturaleza de los parámetros extraídos en los modelados determinista y estocástica contribuyó a elegir el tipo de cuantificación requerida para cada uno de ellos. 		
+	\item Durante el diseño del cuantificador es importante adaptar sus características a las de la función de probabilidad de los datos fuente. 		Este procedimiento es sencillo de implementar mediante la aplicación del Algoritmo de Lloyds.
+	\item Las señales valoradas durante el diseño del codificador presentan resultados aceptables en comparación con las versiones 				originales al realizar medidas como el coeficiente de correlación (cercano a 1) y porcentaje de la raíz cuadrada de la diferencia cuadrática media 			(PRD).
+	\item Las pruebas subjetivas para la evaluación de la calidad del códec deben realizarse en las condiciones adecuadas para los oyentes, es 		importante verificar su estado anímico durante la prueba.
+	\item El codificador diseñado ha sido valorado dentro de los intervalos de confianza aceptables, al tomar los niveles de confianza en un 			95\% . Ha sido superior en la evaluación realizada a otros codificadores de acceso libre existentes en la literatura como OPUS y se ha valorado estadísticamente de manera muy cercana al desempeño de MP3. 
+	\item Es muy importante señalar que en los codificadores OPUS y MP3 se emplean algoritmos de cuantificación más sofisticados que los usados en este trabajo y que además se usan técnicas de codificación de fuente. A pesar de esto, el codificador diseñado por esta tesis no ha empleado ninguna de ellas y ha sido valorado de manera muy cercana a estos estándares.	
+\end{itemize}
+
+\section{Trabajo futuro de investigación}
+En base a los resultados obtenidos en este trabajo de tesis, y con la experiencia adquirida en sus áreas correspondientes, se realizan las siguientes recomendaciones para la realización de trabajos futuros sobre la misma:
+\begin{itemize}
+	\item Experimentar las técnicas de Matching Pursuit Molecular en el modelado de eventos cardíacos. Conformar moléculas que sin duda 			originarán porcentajes mayores de compresión a los obtenidos.
+	\item Implementar en el códec una etapa de segmentación de buen desempeño.
+	\item Dada la naturaleza pasa-bajas de las señales de audio, implementar e investigar técnicas de codificación predictiva lineal deformada 		(WLPC), dando mejor definición al intervalo de bajas frecuencias.
+	\item Implementar la excitación por voz en los filtros de reconstrucción LPC (VELPC) para ahorrar recursos en el cálculo de la estimación 			del periodo tonal, además de evitar las posibles impresiciones por dicha estimación. De igual manera explorar el empleo de excitación por código (CELP).
+	\item Realizar un análisis de componentes principales para conocer por medio de la transformada del coseno (DCT) cuántos de sus 			coeficientes contribuyen para una eficiente reconstrucción del residual mediante VELPC.
+	\item Emplear la cuantificación vectorial sobre algunos de los parámetros extraídos en los modelados MP y LPC, con el objetivo de reducir 		la tasa de datos final del codificador y lograr mayor compresión.
+	\item Codificar mediante compresión sin pérdidas parámetros con \emph{patrones repetitivos} dados por tener un diccionario base de 			elementos, tales como las longitudes y las frecuencias de los átomos.
+	\item Conformar un \emph{código de línea} eficiente para representar el codificador del PCG, reducir posteriormente la cantidad de bits 			generada por medio de algún método compresión sin pérdidas (Huffman por ejemplo).
+	\item Realizar las evaluaciones subjetivas MUSHRA con participantes expertos de la salud.
+	\item Verificar el desempeño del códec en redes de bajas tasas de datos por alguna plataforma de simulación.
+	\item Conformar una base de datos de señales de audio cardíaco propia, empleando el equipo adecuado y tomando un vasto número de 		muestras con diferentes características.
+\end{itemize}
+
+
+
+%%=====================================================

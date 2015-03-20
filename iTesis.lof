@@ -1,0 +1,51 @@
+\select@language {spanish}
+\addvspace {0\p@ }
+\addvspace {0\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Localizaci\IeC {\'o}n de las v\IeC {\'a}lvulas cardiacas. Tomado de \url {http://www.nlm.nih.gov/medlineplus/spanish/ency/esp_imagepages/9380.htm}\relax }}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {2}{\ignorespaces Forma de onda de un ciclo cardiaco.\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {3}{\ignorespaces Espectrograma de un ciclo cardiaco.\relax }}{11}{figure.caption.9}
+\contentsline {figure}{\numberline {4}{\ignorespaces Forma de onda de un soplo diast\IeC {\'o}lico.\relax }}{12}{figure.caption.10}
+\contentsline {figure}{\numberline {5}{\ignorespaces Esquema general del codificador-decodificador dise\IeC {\~n}ado para audio cardiaco.\relax }}{13}{figure.caption.11}
+\contentsline {figure}{\numberline {6}{\ignorespaces Cuatro tipos de se\IeC {\~n}ales: a) Continua en amplitud y tiempo (anal\IeC {\'o}gica); b) discreta en amplitud y continua en tiempo; c) continua en amplitud y discreta en tiempo; d) discreta en tiempo y amplitud.\relax }}{15}{figure.caption.12}
+\contentsline {figure}{\numberline {7}{\ignorespaces Umbral absoluto de audici\IeC {\'o}n. Tomado de \cite {Painter2000}.\relax }}{16}{figure.caption.13}
+\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama a bloques de un codificador de audio perceptual.\relax }}{19}{figure.caption.14}
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama a bloques de un codificador de audio param\IeC {\'e}trico.\relax }}{20}{figure.caption.15}
+\addvspace {0\p@ }
+\contentsline {figure}{\numberline {10}{\ignorespaces Representaci\IeC {\'o}n gr\IeC {\'a}fica de una representaci\IeC {\'o}n dispersa para una se\IeC {\~n}al $\mathbf {v}$ desde un diccionario $\mathcal {\mathbf {D}}$.\relax }}{26}{figure.caption.16}
+\contentsline {figure}{\numberline {11}{\ignorespaces Forma de onda de un \IeC {\'a}tomo de Gabor.\relax }}{29}{figure.caption.17}
+\contentsline {figure}{\numberline {12}{\ignorespaces Representaci\IeC {\'o}n de dos \IeC {\'a}tomos tiempo-frecuencia en cajas de Heisenberg.\relax }}{31}{figure.caption.18}
+\contentsline {figure}{\numberline {13}{\ignorespaces Porcentaje de energ\IeC {\'\i }a recobrada/extra\IeC {\'\i }da tras cada iteraci\IeC {\'o}n realizada en Matching Pursuit. Se observa en el acercamiento a la gr\IeC {\'a}fica que tras $M=30$ iteraciones realmente no se retiene el total de la energ\IeC {\'\i }a.\relax }}{34}{figure.caption.19}
+\contentsline {figure}{\numberline {14}{\ignorespaces Forma de onda temporal y gr\IeC {\'a}fica en el plano tiempo-frecuencia en la reconstrucci\IeC {\'o}n de un evento cardiaco s1.\relax }}{35}{figure.caption.20}
+\addvspace {0\p@ }
+\contentsline {figure}{\numberline {15}{\ignorespaces Diagrama a bloques de un filtro FIR.\relax }}{39}{figure.caption.21}
+\contentsline {figure}{\numberline {16}{\ignorespaces Diagrama a bloques de un filtro IIR.\relax }}{41}{figure.caption.22}
+\contentsline {figure}{\numberline {17}{\ignorespaces Modelo AR como salida de un filtro IIR en respuesta a una entrada de un proceso blanco.\relax }}{41}{figure.caption.23}
+\contentsline {figure}{\numberline {18}{\ignorespaces Modelo de predicci\IeC {\'o}n lineal.\relax }}{44}{figure.caption.24}
+\contentsline {figure}{\numberline {19}{\ignorespaces Modelado mediante LPC. En la parte a) se produce una secuencia $s(n)$ por el modelo todo polos. La parte b) muestra la generaci\IeC {\'o}n de $e(n)$ como salida del filtro $A(z)$, cuya inversi\IeC {\'o}n en c) reproduce idealmente a $s(n)$ si tiene como entrada al error de predicci\IeC {\'o}n $e(n)$.\relax }}{44}{figure.caption.25}
+\contentsline {figure}{\numberline {20}{\ignorespaces Simetr\IeC {\'\i }a entre la predicci\IeC {\'o}n hacia adelante y hacia atr\IeC {\'a}s.\relax }}{46}{figure.caption.26}
+\contentsline {figure}{\numberline {21}{\ignorespaces Aproximaci\IeC {\'o}n por codificaci\IeC {\'o}n predictiva lineal para una se\IeC {\~n}al de audio cardiaco con un orden de filtro $p=30$.\relax }}{53}{figure.caption.27}
+\contentsline {figure}{\numberline {22}{\ignorespaces Comparaci\IeC {\'o}n de la envolvente espectral de una se\IeC {\~n}al proveniente de un sonido de piano muestreada con $f_{s} = 44kHz$ y un orden de predicci\IeC {\'o}n $p=37$ por los m\IeC {\'e}todos LPC y WLPC.\relax }}{55}{figure.caption.28}
+\addvspace {0\p@ }
+\contentsline {figure}{\numberline {23}{\ignorespaces Estructura del codificador para audio cardiaco propuesto.\relax }}{58}{figure.caption.29}
+\contentsline {figure}{\numberline {24}{\ignorespaces Estructura del decodificador para audio cardiaco propuesto.\relax }}{59}{figure.caption.30}
+\contentsline {figure}{\numberline {25}{\ignorespaces Segmentaci\IeC {\'o}n del evento cardiaco normal S1 en una se\IeC {\~n}al de audio cardiaco.\relax }}{59}{figure.caption.31}
+\contentsline {figure}{\numberline {26}{\ignorespaces Descomposici\IeC {\'o}n MP de un evento cardiaco y muestra de los primeros 15 \IeC {\'a}tomos mayormente correlacionados.\relax }}{61}{figure.caption.32}
+\contentsline {figure}{\numberline {27}{\ignorespaces Se\IeC {\~n}al de residual y silencios obtenida de un audio cardiaco soplo diast\IeC {\'o}lico.\relax }}{63}{figure.caption.33}
+\contentsline {figure}{\numberline {28}{\ignorespaces Ventaneo (segmentaci\IeC {\'o}n) de la se\IeC {\~n}al residual m\IeC {\'a}s silencios.\relax }}{64}{figure.caption.34}
+\contentsline {figure}{\numberline {29}{\ignorespaces Medida de planitud espectral promedio de la se\IeC {\~n}al error $e(n)$ para \IeC {\'o}rdenes del filtro predictor desde 1 hasta 100.\relax }}{65}{figure.caption.35}
+\contentsline {figure}{\numberline {30}{\ignorespaces Representaci\IeC {\'o}n gr\IeC {\'a}fica del procedimiento de s\IeC {\'\i }ntesis ``overlap and add (OLA)''.\relax }}{66}{figure.caption.36}
+\contentsline {figure}{\numberline {31}{\ignorespaces Filtros de pre-\IeC {\'e}nfasis y de-\IeC {\'e}nfasis usados en la codificaci\IeC {\'o}n LPC.\relax }}{67}{figure.caption.37}
+\contentsline {figure}{\numberline {32}{\ignorespaces Regiones de decisi\IeC {\'o}n y niveles de reconstrucci\IeC {\'o}n de un cuantificador.\relax }}{69}{figure.caption.38}
+\contentsline {figure}{\numberline {33}{\ignorespaces Par\IeC {\'a}metros extra\IeC {\'\i }dos de los modelados MP y LPC para el c\IeC {\'o}dec. Se indican los par\IeC {\'a}metros necesarios de cuantificar.\relax }}{70}{figure.caption.39}
+\contentsline {figure}{\numberline {34}{\ignorespaces Histogramas normalizados (pdf) para las amplitudes y fases de los \IeC {\'a}tomos extra\IeC {\'\i }dos en las descomposiciones.\relax }}{71}{figure.caption.40}
+\contentsline {figure}{\numberline {35}{\ignorespaces Histogramas normalizados (pdf) para los coeficientes LSFD y ganancias del filtro predictor.\relax }}{71}{figure.caption.41}
+\contentsline {figure}{\numberline {36}{\ignorespaces Distorsi\IeC {\'o}n espectral com\IeC {\'u}n por el ruido de cuantificaci\IeC {\'o}n aplicada a diferentes representaciones equivalentes LPC.\relax }}{74}{figure.caption.42}
+\contentsline {figure}{\numberline {37}{\ignorespaces Formas de onda original y reconstruida por el c\IeC {\'o}dec para un ciclo de un murmullo sist\IeC {\'o}lico tard\IeC {\'\i }o.\relax }}{78}{figure.caption.43}
+\addvspace {0\p@ }
+\contentsline {figure}{\numberline {38}{\ignorespaces Visualizaci\IeC {\'o}n en la pantalla de la interfaz MUSHRA.\relax }}{82}{figure.caption.44}
+\contentsline {figure}{\numberline {39}{\ignorespaces Histograma de las calificaciones medias e intervalos de confianza para el est\IeC {\'\i }mulo Apertura Normal S1.\relax }}{87}{figure.caption.45}
+\contentsline {figure}{\numberline {40}{\ignorespaces Histograma de las calificaciones medias e intervalos de confianza para el est\IeC {\'\i }mulo Apertura Normal S2.\relax }}{87}{figure.caption.46}
+\contentsline {figure}{\numberline {41}{\ignorespaces Histograma de las calificaciones medias e intervalos de confianza para el est\IeC {\'\i }mulo S3.\relax }}{88}{figure.caption.47}
+\contentsline {figure}{\numberline {42}{\ignorespaces Histograma de las calificaciones medias e intervalos de confianza para el est\IeC {\'\i }mulo S4.\relax }}{88}{figure.caption.48}
+\contentsline {figure}{\numberline {43}{\ignorespaces Histograma de las calificaciones medias e intervalos de confianza para el est\IeC {\'\i }mulo Murmullo Pansist\IeC {\'o}lico.\relax }}{89}{figure.caption.49}
+\addvspace {0\p@ }

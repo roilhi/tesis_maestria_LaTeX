@@ -1,0 +1,94 @@
+\chapter{Introducción}\label{capit:cap1}
+\vspace{-2.0325ex}%
+\noindent
+\rule{\textwidth}{0.5pt}
+\vspace{-5.5ex}% 
+\newcommand{\pushline}{\Indp}
+
+El proveer servicios de salud de calidad para la población se ha convertido en una necesidad prioritaria para cualquier sociedad; no obstante las limitantes geográficas y de infraestructura hacen que esta tarea sea más complicada de llevar a cabo en las zonas marginales. En efecto, las áreas metropolitanas concentran la mayor cantidad de recursos económicos así como especialistas de la salud.
+
+Las tecnologías de la información y comunicaciones (TIC's) han brindado alternativas al problema anterior teniendo herramientas como la telemedicina y la telesalud, las cuales ayudan al intercambio de recursos clínicos y consultas a distancia entre el especialista y algún paciente de alguna zona alejada a la metrópoli. Sin embargo, otra cuestión que limita la labor de las TIC's es que los recursos económicos y tecnológicos necesarios para la comunicación hacia las localidades marginadas son limitados. Las velocidades de transmisión y ancho de banda pueden no tener el soporte necesario ni la fidelidad requerida para transportar datos de tipo clínico, los cuales deben ser cuidadosamente blindados y consecuentemente no tan susceptibles a errores para que el especialista pueda brindar el diagnóstico adecuado.
+
+Por otra parte las enfermedades cardiovasculares (CVD's por sus siglas en Inglés) son la principal causa de mortalidad entre la población a nivel mundial según la OMS (o bien, WHO por sus siglas en Inglés), y es que tan sólo en el 2008 alrededor de 17.3 millones de personas fallecieron por alguna CVD representando el 30\% del total de muertes registradas en ese periodo \cite[]{Who2012}.
+
+Nuestro país, México, no es la excepción. Las enfermedades cardiovasculares son la segunda causa de muerte dado el alto índice de obesidad en la población. Según cifras registradas en el 2010 el Sistema Nacional de Información en la Salud (SINAIS) \footnote{Sistema Nacional de Información en Salud. Principales causas de mortalidad general: Disponible en \url{http://sinais.salud.gob.mx/mortalidad/index.html}. Al mes de octubre de 2014 no existen datos recientes.}.
+
+Actualmente existen diversas técnicas para detectar alguna enfermedad cardiovascular; algunas de ellas son bastante sofisticadas como la imagen por resonancia magnética (IMR), la ecocardiografía o ultrasonido cardiaco y la cateterización cardiaca. Todos estos métodos proporcionan una gran cantidad de información importante para realizar algún diagnóstico, sin embargo se vuelven inaccesibles para los habitantes de zonas marginadas por su alto costo y complejidad.
+
+ En contraste, un método sencillo y de bajo coste para brindar un primer acercamiento hacia alguna anomalía cardiaca es la \emph{auscultación}, técnica que consiste en escuchar los ruidos internos del corazón desde la pared torácica con un dispositivo llamado \emph{estetoscopio}. En realidad los sonidos que se están escuchando son los producidos por la actividad de las válvulas cardiacas en los procesos de intercambio de oxígeno en la sangre (sístole y diástole).
+ 
+Los primeros estetoscopios fueron desarrollados con base en principios mecánicos, con lo cual los estudiantes de medicina debían adquirir ciertas habilidades auditivas al auscultar para identificar diferentes patologías \cite[]{Roguin2006}. Algunos estetoscopios existentes en la actualidad son digitales, con lo que es posible el registrar y visualizar la forma de onda de audio cardiaco digitalizada, además de poseer una mejor respuesta en frecuencia y controles de volumen \cite[]{Abbas2009}. El dispositivo puede estar conectado de forma cableada o inalámbrica al PC cuando se registra algún fonocardiograma (PCG)\footnote {Así se le denomina a la señal de audio cardiaco.}, en este último caso se han desarrollado estetoscopios donde el estándar Bluetooth brinda la conexión al dispositivo terminal (Como el 3200 de la serie 3M Litmann \copyright).
+
+La digitalización de los sonidos cardiacos hace posible implementar procedimientos que serían muy difíciles de realizar en el dominio analógico;  tales como un análisis más completo de la señal en el plano tiempo frecuencia, técnicas para eliminar ruidos existentes \emph{denoising}, filtrado, entre otros. Estos procesos proveerán el acondicionamiento adecuado para la transmisión de estas señales sobre redes de comunicaciones. 
+
+Un fonocardiograma digitalizado también representa una ventaja conociendo que en el dominio de la frecuencia existen límites en la audición humana, otorgando a la auscultación mayor precisión para realizar un diagnóstico \footnote{La técnica de diagnóstico por medio del análisis digital de señales fisiológicas en biomedicina es conocida como \emph{diagnóstico asistido por computadora (computer-aided diagnosis)}\cite[]{Doi2008}.}.
+
+ Para representar la mayor cantidad de información de una señal de audio de manera comprimida, se hace el uso de un códec (codificador-decodificador); el cual es una secuencia ordenada de bits que describirán algunos atributos del audio para ser procesados en cualquier sistema que esté digitalizado. 
+
+Existen también otros codificadores dedicados a señales de imágenes, video o texto que tienen también el mismo objetivo. Sin embargo, los códecs de audio que existen en la actualidad son dedicados y adaptados a las señales musicales y a la voz humana (vocoders), aunque otros codificadores son de propósito general, por lo regular se basan en las características proporcionadas por estos tipos de sonidos.
+
+
+\section{Objetivo general de la tesis}
+Diseñar un códec que comprima la señal de audio cardiaco para su transmisión sobre redes inalámbricas con bajas tasas de datos. 
+El codificador desarrollado se realizará tomando como base la técnica de representación escasa de señales por medio del algoritmo de Matching Pursuit para la compresión de fonocardiogramas \cite[]{Nieblas2014}.  
+
+Se tomarán los parámetros adecuados en la descomposición realizada por MP (a dicho modelado se le considerará como \emph{Parte determinística}) así como el modelado de la señal residual y silencios (\emph{Parte estocástica} del códec diseñado) para su cuantificación y posteriormente realizar la conformación de la trama de bits que represente adecuadamente al PCG. 
+\subsection{Objetivos particulares} 
+\begin{itemize}
+	\item Comprimir los sonidos cardiacos de manera eficiente, empleando el menor número de iteraciones/átomos posible y 		extrayendo la mayor cantidad de energía al emplear el método Matching Pursuit y diccionarios de Gabor.
+	\item Modelar de manera adecuada la señal residual tras ejecutar la descomposición MP así como los silencios entre 			eventos cardíacos.
+	\item Disminuir la tasa de datos con el códec propuesto con respecto a si se transmitiera un fonocardiograma con un 		codificador de audio convencional. 
+\end{itemize}
+
+\section{Justificación}
+El diagnóstico de patologías cardiacas que da origen a algunas de las enfermedades cardiovasculares se puede otorgar de manera sencilla y económica por medio de la auscultación, donde se obtendrán señales de audio cardíaco que proporcionarán información sobre la actividad mecánica del corazón y el estado de sus válvulas. 
+
+Más del 99\% de la energía del fonocardiograma se concentra en la banda de 5-1000Hz \cite[]{Djebbari2000}.  
+En algunos trabajos de la literatura se ha muestreado la señal de PCG empleando tasas en el rango de 8,000-22,500Hz y con 8-16 bits de resolución \cite[]{castorena2012}. Con lo anterior se requieren tasas de datos efectivas en el rango de 64 kbps a 352.8 kbps. Estas medidas tienen como consecuencia un sistema de tele-auscultación costoso y  complicado de implementar en nuestro país \cite[]{Nieblas2014}. 
+
+Además de las anteriores consecuencias, si se tiene un escenario real de aplicación y en el mejor de los casos la tasa de datos neta será del orden del 50\% de la tasa bruta de transferencia, el resultado será la degradación en la calidad de la señal recibida.
+
+Aprovechando las técnicas por representación escasa de señales se pretende lograr comprimir fonocardiogramas extrayendo en la descomposición más del 90\% de la energía de la señal de audio. Se pretende crear un códec de propósito específico para señales de audio cardiaco, con lo que se logrará fidelidad al intercambio de este tipo de información por redes de bajas tasas de datos, se proporcionará un primer medio para que a distancia se puedan diagnosticar eficazmente patologías o anomalías cardíacas.
+
+\section{Metodología de la investigación}
+
+Para alcanzar los objetivos planteados en el presente trabajo se han presentado varias etapas. Los siguientes enunciados resumen los puntos más importantes de cada una de ellas: 
+\begin{itemize}
+	\item Se revisó el estado del arte concerniente al modelado de sonidos cardiacos.
+	\item Se reunió/generó una base de datos de audio cardiaco para ser analizada (sonidos normales y con patologías).
+	\item Se realizó la segmentación de eventos cardiacos como primer paso en el análisis. 
+	\item Se analizó el modelado y compresión de fonocardiogramas utilizando la representación escasa de señales del 				algoritmo Matching Pursuit (MP).  
+	\item Se comprimió de manera eficiente el PCG por medio de MP empleando el menor número de átomos posible.
+	\item Se modeló adecuadamente el residual de la señal producto de la representación escasa además de los silencios 		entre los eventos cardiacos por medio de predicción lineal (LPC).
+	\item Se extrajeron y analizaron los parámetros más significativos producto de la descomposición MP y la codificación LPC.
+	\item Se cuantificaron de manera adecuada los parámetros extraídos evaluando el desempeño de los cuantificadores 			existentes en la literatura.	
+	\item Se verificó la cantidad de bits requerida por cada parámetro necesario en la compresión del PCG por el códec propuesto, con ello se calcularon también los porcentajes de compresión para velocidades de 8 kbps y 16 kbps.
+	
+	\item Se evaluó de manera objetiva y subjetiva por medio del test MUSHRA, la calidad en la compresión del códec propuesto así como su desempeño 		al compararlo con MPEG-1 capa 3 (MP3) y OPUS (Codificador de acceso libre).
+\end{itemize}
+
+\section{Organización de la tesis}
+ La presente tesis se expondrá conforme a los puntos mostrados en la metodología anterior en cuanto a secuencia y objetivos específicos para cada capítulo. A continuación se describe el contenido de cada una de dichas secciones.
+  
+El \emph{Capítulo 2} describe de manera fisiológica al audio cardíaco, es decir, qué origina esta señal físicamente y qué representa; cómo detectar anomalías cardíacas por medio de un fonocardiograma además de sus características como señal acústica y eléctrica: forma de onda temporal, duración, respuesta en frecuencia y ancho de banda. 
+
+También en esta sección se ha dado una revisión del estado de arte en codificación de audio y en el modelado del PCG, algunas técnicas que han logrado su compresión y procesamiento de manera adecuada, concluyendo que MP es un método muy adecuado por las características de esta señal.
+
+El códec para audio cardíaco diseñado es dividido en una parte determinística y una parte estocástica. En el primer caso se le conoce como señal determinística a aquella que pueda ser descrita por una expresión matemática cerrada o bien puede ser reproducida en repetidas ocasiones. 
+
+Por otra parte, un proceso aleatorio en tiempo discreto es un \emph{ensemble} o colección de señales que es definido en términos de las propiedades estadísticas del proceso sufrido por este conjunto. Se trata de una secuencia \emph{indizada} de valores aleatorios, una estructura que describe estos valores y las relaciones existentes entre ellos. Un proceso aleatorio en tiempo discreto puede emplear conjuntos de señales determinísticas \cite[]{Papoulis1984}.
+
+En el \emph{Capítulo 3} se expone el modelado Matching Pursuit como una parte determinística del códec, ya que se ha encontrado en algunos trabajos recientes que se obtiene una gran aproximación dada la alta correlación presentada entre las ondas denominadas átomos de Gabor y los eventos de audio cardiaco. 
+
+Se expone en el \emph{Capítulo 4} una parte del fonocardiograma que no guarda una buena correlación con los átomos de Gabor y por lo tanto no es conveniente modelar por MP, ya que la descomposición emplea un elevado número de átomos. Este \emph{residual} o parte estocástica del PCG (parecida a ruido o \emph{noise-like}) es modelada por medio de codificación por predicción lineal (LPC). 
+
+Ya teniendo completa la representación del audio cardiaco se procede a conformar el códec juntando las partes expuestas en los capítulos $3$ y $4$. Los parámetros más importantes de estos modelados, es decir los que preservan la mayor información de la señal, se extraerán para ser cuantificados.
+
+Posteriormente se calcularán las cantidades de bits requeridas por parámetro y consecuentemente los porcentajes de compresión en los fonocardiogramas analizados. Este procedimiento es descrito en el \emph{Capítulo 5}.
+
+Siguiendo un protocolo científico se deberá dar una validación para el producto obtenido en el presente trabajo. En el caso de codificación de audio se realizan pruebas subjetivas y un test muy común para evaluación es el MUSHRA, avalado por la Unión Internacional de Telecomunicaciones (ITU). 
+
+La realización del método MUSHRA aplicando el codificador de audio cardiaco diseñado y el análisis de los resultados arrojados por estas pruebas son expuestos en el \emph{Capítulo 6}.
+
+Para la finalización del presente trabajo se exponen las concusiones respectivas en el \emph{Capítulo 7}, además se plantean algunas futuras líneas de investigación para el desarrollo de futuras tesis enfocadas en la codificación de audio cardiaco.
+
